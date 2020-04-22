@@ -1,5 +1,10 @@
 version: '3.6'
 
+# check for other errors and correct container start
+# check with http://localhost:9200/
+# check with http://localhost:9201/
+# check with http://localhost:9202/
+
 services:
 
   es01:
