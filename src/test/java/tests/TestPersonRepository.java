@@ -31,7 +31,7 @@ public class TestPersonRepository {
 
         PersonRepository repository = new PersonRepository(client);
 
-        // run only once
+        // TODO run only once
         // create index
         {
 //            repository.createIndex();
