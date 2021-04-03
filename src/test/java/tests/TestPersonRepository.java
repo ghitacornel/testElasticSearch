@@ -1,9 +1,7 @@
 package tests;
 
-import config.Connection;
 import model.Person;
-import org.elasticsearch.client.RestHighLevelClient;
-import org.junit.After;
+import org.elasticsearch.ElasticsearchStatusException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,31 +9,27 @@ import repository.PersonRepository;
 
 import java.util.UUID;
 
-public class TestPersonRepository {
+public class TestPersonRepository extends TestsTemplate {
 
-    private RestHighLevelClient client;
+    PersonRepository repository;
 
     @Before
-    public void before() {
-        client = Connection.client();
-    }
+    public void ensureIndexExists() {
 
+        repository = new PersonRepository(client);
 
-    @After
-    public void after() throws Exception {
-        client.close();
+        // TODO run only once
+        // create index
+        try {
+            repository.createIndex();
+        } catch (ElasticsearchStatusException e) {
+            System.err.println("index exists " + e.getMessage());
+        }
+
     }
 
     @Test
     public void testCRUD() {
-
-        PersonRepository repository = new PersonRepository(client);
-
-        // TODO run only once
-        // create index
-        {
-//            repository.createIndex();
-        }
 
         String id = UUID.randomUUID().toString();
         System.out.println("generated id = " + id);
