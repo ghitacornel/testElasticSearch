@@ -6,7 +6,7 @@ import org.elasticsearch.client.RestHighLevelClient;
 import org.junit.After;
 import org.junit.Before;
 
-public abstract class TestsTemplate {
+public abstract class TestTemplate {
 
     protected RestHighLevelClient client;
 

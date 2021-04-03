@@ -9,7 +9,7 @@ import repository.PersonRepository;
 
 import java.util.UUID;
 
-public class TestPersonRepository extends TestsTemplate {
+public class TestPersonRepository extends TestTemplate {
 
     PersonRepository repository;
 
