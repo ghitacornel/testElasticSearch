@@ -7,18 +7,6 @@
     <groupId>org.example</groupId>
     <artifactId>testElasticSearch</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>13</source>
-                    <target>13</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,7 +20,7 @@
         <dependency>
             <groupId>org.elasticsearch.client</groupId>
             <artifactId>elasticsearch-rest-high-level-client</artifactId>
-            <version>7.6.2</version>
+            <version>7.12.0</version>
         </dependency>
 
         <dependency>
