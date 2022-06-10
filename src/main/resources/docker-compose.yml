@@ -1,5 +1,3 @@
-version: '3.9'
-
 # check for other errors and correct container start
 # check with http://localhost:9200/
 # check with http://localhost:9201/
@@ -8,7 +6,7 @@ version: '3.9'
 services:
 
   es01:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.12.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.2.2
     container_name: es01
     environment:
       - node.name=es01
@@ -29,7 +27,7 @@ services:
       - elastic_network
 
   es02:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.12.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.2.2
     container_name: es02
     environment:
       - node.name=es02
@@ -50,7 +48,7 @@ services:
       - elastic_network
 
   es03:
-    image: docker.elastic.co/elasticsearch/elasticsearch:7.12.0
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.2.2
     container_name: es03
     environment:
       - node.name=es03
